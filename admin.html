@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>List of Groups</title>
+    <meta content="List of Groups" name="list of groups">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">  
+    <link href="css/styles.css" rel="stylesheet">	
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+        <div class="header">
+            <div class="top-section">
+                <img class="logo" src="img/littleforest_logo.png">
+                <ul class="log-in">
+                    <li>
+                        <i class="fa fa-user"></i>&nbsp;Hello lfi</li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i>&nbsp;Log out</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav id="main-nav" role="navigation" class="main-nav">
+            <ul id="main-menu" class="sm">
+                <li>
+                    <a href="#"><i class="fa fa-home"></i>Home</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-building"></i>Little Forest
+                </a>
+                </li>
+            </ul>
+        </nav>
+		<body>
+        <div class="header-1">
+            <h1 class="title" id="h1tag"><i class="fa fa-files-o"></i>&nbsp;&nbsp;List of Groups</h1>
+            <div class="parentDiv">
+                       <button class="share-btn"><i class="fa fa-share"></i>Share Report</button>
+            <div class="right-group">
+            <div id="example_filter" class="dataTables_filter right-group-element">
+             </div>
+
+             <span class="tooltip" onmouseover="tooltip.pop(this, '#table', {position:0, cssClass:'no-padding'})">
+                    <button class="btn right-group-element"><a href="#"><i class="fa fa-table"></i></a></button>
+             </span>
+
+
+             <span class="tooltip" onmouseover="tooltip.pop(this, '#globe', {position:0, cssClass:'no-padding'})">
+                    <button class="btn right-group-element"><a href="#"><i class="fa fa-globe"></i></a></button>
+             </span>
+                          
+             <span class="tooltip" onmouseover="tooltip.pop(this, '#chart', {position:0, cssClass:'no-padding'})">       
+                    <button class="btn last-btn right-group-element"><a href="#"><i class="fa fa-line-chart"></i></a></button>
+             </span>
+                                    <input type="text" id="popupDatepicker" placeholder="Add a date here">
+   
+             <label class="select">
+            <select class="search-dropdown" id="dataviews" name="myOptions">
+                    <option value="0">Overall</option>
+                                <option value="1">Training</option>
+                                <option value="2">Healthcare</option>
+                                <option value="3">Professional Services</option>
+                                <option value="4">CSIR</option>
+                                <option value="5">Product Certification</option>
+                                <option value="6">System Certification</option>
+                  </select>
+                </label>
+
+            <label class="select">
+            <select id="segments">
+                      <option value="">Data Views</option>
+                      <option value="dashboard">Dashboard</option>
+                      <option value="users">Users</option>
+                      <option value="visits">Visits</option>
+                      <option value="channels">Channels</option>
+                      <option value="pages">Pages</option>
+                      <option value="goals">Goals</option>
+                      <option value="campaigns">Campaigns</option>
+                      <option value="devices">Devices</option>
+                  </select>
+                </label>
+                </div>
+
+             
+          </div> <!--end of right group-->
+
+        </div><!-- end of header 1 -->
+        <div class="header-2">
+        <div class="right-btn-group">
+        <button class="edit-btn btn"><i class="fa fa-pencil"></i>Edit</button>
+        <button class="new-btn btn" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i>New</button>
+        </div> <!--end of right group-->
+        </div><!-- end of header 2 -->
+<div class="table-container">
+<table id="example" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Show on Home</th>
+                <th>Parent</th>
+                <th>Description</th>                                                                                    
+            </tr>
+        </thead>
+    </table>
+</div><!-- end of table group -->
+       <div style="display:none;">          
+            <div id="table">
+                <div style="padding:0 10px; width:100%;">
+                    <p class="tooltip-content">Table View</p>
+                </div>
+            </div>   <!-- end of table -->    
+
+            <div id="globe">
+                <div style="padding:0 10px; width:100%;">
+                    <p class="tooltip-content">Map View</p>
+                </div>
+            </div>   <!-- end of globe --> 
+
+            <div id="chart">
+                <div style="padding:0 10px; width:100%;">
+                    <p class="tooltip-content">Line Graph View</p>
+                </div>
+            </div>   <!-- end of globe --> 
+
+        </div><!-- end of tooltip content -->
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">New Group</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+<form action="#">
+<div class="form-separation">
+  <label class="modal-label" for="name">Name</label>
+  <input class="modal-input" type="text" placeholder="Global" name="name">
+</div>
+
+<div class="form-separation">
+<label class="modal-label modal-label-dropdown" for="name">Parent Group</label>
+         <label class="select">
+            <select class="search-dropdown" id="dataviews" name="myOptions">
+                    <option value="0">List of Group</option>
+                    <option value="1">Value 1</option>
+                  </select>
+            </label>
+        </div>
+
+<div class="form-separation">
+<label class="modal-label modal-label-dropdown" for="name">Permissions</label>        
+            <label class="select">
+            <select class="search-dropdown" id="dataviews" name="myOptions">
+                    <option value="0">Select Users</option>
+                    <option value="1">Value 1</option>
+                  </select>
+            </label>
+        </div>
+
+<div class="form-separation">
+  <label class="modal-label" for="name">Description</label>
+  <input class="modal-input" type="text" placeholder="Description" name="description">
+</div>
+         <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+        </div>
+
+        </div><!-- End of Modal Body -->
+
+        </form> 
+
+        
+      </div>
+    </div>
+  </div>
+<!-- End of Modal -->        
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="js/tooltip.js"></script>        
+<script src="js/jquery.plugin.min.js"></script>
+<script src="js/datepick.min.js"></script>   
+<script src="js/admin_scripts.js"></script>        
+<script>       
+$(function() {
+    $('#popupDatepicker').datepick();
+});        
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+        </body>
+</html>
